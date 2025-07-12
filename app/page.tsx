@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react"
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
 import { Upload, Send, Download, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
@@ -31,7 +32,7 @@ export default function CVMaker() {
 
       console.log("Uploading file:", selectedFile.name, "Size:", selectedFile.size)
 
-      const response = await fetch("/api/upload", {
+      const response = await fetch(`${BACKEND_URL}/upload`, {
         method: "POST",
         body: formData,
       })
@@ -76,7 +77,7 @@ export default function CVMaker() {
 
       console.log("Submitting prompt:", prompt)
 
-      const response = await fetch("/api/upl_chat", {
+      const response = await fetch(`${BACKEND_URL}/upl_chat`, {
         method: "POST",
         body: formData,
       })
