@@ -242,10 +242,10 @@ export default function CVMaker() {
                 </div>
 
                 {pdfBlob && (
-                  <div className="flex gap-3 justify-center">
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch w-full">
                     <Button
                       onClick={handleDownload}
-                      className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
+                      className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30 w-full sm:w-auto"
                     >
                       <Download className="w-5 h-5 mr-2" />
                       Download Enhanced CV
@@ -253,7 +253,7 @@ export default function CVMaker() {
                     <Button
                       onClick={handlePreview}
                       variant="outline"
-                      className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 py-3 px-6 rounded-xl transition-all duration-300 bg-transparent"
+                      className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 py-3 px-6 rounded-xl transition-all duration-300 bg-transparent w-full sm:w-auto"
                     >
                       Preview PDF
                     </Button>
